@@ -13,7 +13,7 @@ const onSubmit = async values => {
 export default class SampleForm extends React.Component {
 render() {
 return  (<Styles>
-    <h1>🏁 React Final Form - Simple Example</h1>
+    <h1><span role="img" >🏁</span> React Final Form - Simple Example</h1>
     <a href="https://github.com/erikras/react-final-form#-react-final-form">
       Read Docs
     </a>

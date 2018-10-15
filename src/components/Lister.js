@@ -34,6 +34,11 @@ export default class Lister extends React.Component {
       });
     }
 
-    return <div className="list" >{rows}</div>
+    return <div className="list" >
+      <ul>
+        {rows}
+      </ul>
+    </div>
+
   };
 }
