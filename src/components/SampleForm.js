@@ -10,7 +10,7 @@ const onSubmit = async values => {
   window.alert(JSON.stringify(values, 0, 2))
 }
 
-class SampleForm extends React.Component {
+export default class SampleForm extends React.Component {
 render() {
 return  (<Styles>
     <h1>🏁 React Final Form - Simple Example</h1>
@@ -158,4 +158,5 @@ return  (<Styles>
       )}
     />
   </Styles>);
+}
 }

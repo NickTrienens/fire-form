@@ -1,11 +1,10 @@
 import React from 'react';
-import StoryRow from './StoryRow.js';
-import EditableField from './EditableField.js';
-import { Badge } from 'antd';
+//import { Badge } from 'antd';
 
 export default class Lister extends React.Component {
   constructor(props) {
     super(props);
+    console.log(props);
   }
 
   shouldComponentUpdate(nextProps, nextState) {
@@ -24,23 +23,17 @@ export default class Lister extends React.Component {
   }
 
   render() {
-    const { items, rowComponent } = this.props;
+    const { items, rowMaker } = this.props;
 
     var rows = "";
     var count = 0;
     if( items !== undefined ) {
-      rows = items.map((story) => {
+      rows = items.map((item) => {
           count++;
-          return <div>
+          return rowMaker(item, count)
       });
     }
 
-    return (
-      <div className="list" >
-          <div className="container">
-
-          </div>
-      </div>
-    );
-  }
+    return <div className="list" >{rows}</div>
+  };
 }
