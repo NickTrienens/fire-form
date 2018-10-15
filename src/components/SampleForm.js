@@ -11,12 +11,14 @@ const onSubmit = async values => {
 }
 
 export default class SampleForm extends React.Component {
+
 render() {
-return  (<Styles>
-    <h1><span role="img" >🏁</span> React Final Form - Simple Example</h1>
-    <a href="https://github.com/erikras/react-final-form#-react-final-form">
-      Read Docs
-    </a>
+  return <Styles>
+    <h1>
+      <a href="https://github.com/erikras/react-final-form#-react-final-form">
+        Read Docs
+      </a>
+    </h1>
     <Form
       onSubmit={onSubmit}
       initialValues={{ stooge: 'larry', employed: false }}
@@ -48,115 +50,26 @@ return  (<Styles>
             <label>Favorite Color</label>
             <Field name="favoriteColor" component="select">
               <option />
-              <option value="#ff0000">❤️ Red</option>
-              <option value="#00ff00">💚 Green</option>
-              <option value="#0000ff">💙 Blue</option>
+              <option value="#ff0000"> Red</option>
+              <option value="#00ff00"> Green</option>
+              <option value="#0000ff"> Blue</option>
             </Field>
-          </div>
-          <div>
-            <label>Toppings</label>
-            <Field name="toppings" component="select" multiple>
-              <option value="chicken">🐓 Chicken</option>
-              <option value="ham">🐷 Ham</option>
-              <option value="mushrooms">🍄 Mushrooms</option>
-              <option value="cheese">🧀 Cheese</option>
-              <option value="tuna">🐟 Tuna</option>
-              <option value="pineapple">🍍 Pineapple</option>
-            </Field>
-          </div>
-          <div>
-            <label>Sauces</label>
-            <div>
-              <label>
-                <Field
-                  name="sauces"
-                  component="input"
-                  type="checkbox"
-                  value="ketchup"
-                />{' '}
-                Ketchup
-              </label>
-              <label>
-                <Field
-                  name="sauces"
-                  component="input"
-                  type="checkbox"
-                  value="mustard"
-                />{' '}
-                Mustard
-              </label>
-              <label>
-                <Field
-                  name="sauces"
-                  component="input"
-                  type="checkbox"
-                  value="mayonnaise"
-                />{' '}
-                Mayonnaise
-              </label>
-              <label>
-                <Field
-                  name="sauces"
-                  component="input"
-                  type="checkbox"
-                  value="guacamole"
-                />{' '}
-                Guacamole 🥑
-              </label>
-            </div>
-          </div>
-          <div>
-            <label>Best Stooge</label>
-            <div>
-              <label>
-                <Field
-                  name="stooge"
-                  component="input"
-                  type="radio"
-                  value="larry"
-                />{' '}
-                Larry
-              </label>
-              <label>
-                <Field
-                  name="stooge"
-                  component="input"
-                  type="radio"
-                  value="moe"
-                />{' '}
-                Moe
-              </label>
-              <label>
-                <Field
-                  name="stooge"
-                  component="input"
-                  type="radio"
-                  value="curly"
-                />{' '}
-                Curly
-              </label>
-            </div>
           </div>
           <div>
             <label>Notes</label>
             <Field name="notes" component="textarea" placeholder="Notes" />
           </div>
           <div className="buttons">
-            <button type="submit" disabled={submitting || pristine}>
-              Submit
-            </button>
-            <button
-              type="button"
-              onClick={form.reset}
-              disabled={submitting || pristine}
-            >
+            <button type="submit" disabled={submitting || pristine} > Submit </button>
+            <button type="button" onClick={form.reset} disabled={submitting || pristine} >
               Reset
             </button>
           </div>
           <pre>{JSON.stringify(values, 0, 2)}</pre>
         </form>
-      )}
-    />
-  </Styles>);
-}
+      ) }
+      />
+    </Styles>
+
+  }
 }

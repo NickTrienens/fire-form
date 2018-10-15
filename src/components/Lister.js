@@ -1,10 +1,18 @@
 import React from 'react';
+import { List } from 'antd';
+
 //import { Badge } from 'antd';
 
 export default class Lister extends React.Component {
   constructor(props) {
-    super(props);
-    console.log(props);
+      super(props);
+      console.log(props);
+      this.state = {
+        initLoading: true,
+        loading: false,
+
+        list: [],
+      }
   }
 
   shouldComponentUpdate(nextProps, nextState) {
@@ -17,13 +25,15 @@ export default class Lister extends React.Component {
   componentWillUnmount() {
 
   }
-
   componentDidMount() {
-    this.setState({didMount: true });
+    if (this.props.items.count > 0 ){
+      this.setState({ loading: false })
+    }
   }
 
   render() {
     const { items, rowMaker } = this.props;
+    const { loading } = this.state;
 
     var rows = "";
     var count = 0;
@@ -34,11 +44,14 @@ export default class Lister extends React.Component {
       });
     }
 
-    return <div className="list" >
-      <ul>
-        {rows}
-      </ul>
-    </div>
+    return <List className="demo-loadmore-list"
+           loading={loading}
+           itemLayout="horizontal"
+           dataSource={items}
+           renderItem={item => (
+             rowMaker(item)
+           )}
+         />
 
   };
 }

@@ -5,6 +5,8 @@ import 'antd/dist/antd.css';
 import { Layout, Menu, Icon  } from 'antd';
 import Lister from "./components/Lister.js";
 import ExModal from './components/ExModal.js';
+import MealRow from './components/MealRow.js';
+import TemperatureFooter from './components/TemperatureFooter.js';
 import createBrowserHistory from 'history/createBrowserHistory'
 
 const { Header, Footer, Sider, Content } = Layout;
@@ -62,16 +64,19 @@ class App extends Component {
            </Menu>
       </Sider>
       <Layout style={{ marginLeft: 200 }}>
-      <Header style={{ background: '#fff',  margin: '24px 16px 0', padding: 0 }} ><h1>Hello </h1></Header>
+      <Header style={{ background: '#fff',  margin: '24px 16px 0', padding: '0px 10px 0' }} ><h1>Hello </h1></Header>
       <Content style={{ margin: '24px 16px 0', overflow: 'initial' }} >
          <div style={{ padding: 24, background: '#fff', textAlign: 'center' }}>
            <Lister
              items={items}
-             rowMaker={(item, index)=>{ return <li style={{ textAlign: 'left' }} key={index}>{item.name}</li> } }
+             rowMaker={(item, index)=>{ return <MealRow style={{ textAlign: 'left' }} item={item} /> } }
            />
        </div>
       </Content>
-     <Footer><ExModal /></Footer>
+     <Footer>
+       <ExModal />
+       <TemperatureFooter />
+     </Footer>
    </Layout>
  </Layout>
 

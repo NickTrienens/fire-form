@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "antd": "^3.10.1",
+    "axios": "^0.18.0",
     "final-form": "^4.10.0",
     "firebase": "^5.5.4",
     "history": "^4.7.2",
