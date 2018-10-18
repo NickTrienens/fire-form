@@ -6,11 +6,11 @@ export default class MealRow extends React.Component {
 render() {
   const { item } = this.props;
 
-  return <List.Item actions={[<a>edit</a>, <a>more</a>]}>
+  return <List.Item actions={[<a>edit</a>]}>
   <Skeleton avatar title={false} loading={item.loading} active>
     <List.Item.Meta
       avatar={<Avatar src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" />}
-      title={<a href="https://ant.design">{item.name}</a>}
+      title={item.name}
       description={item.description}
     />
     </Skeleton>
